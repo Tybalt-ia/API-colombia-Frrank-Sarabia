@@ -1,0 +1,18 @@
+
+.tarjetaDep{
+    max-width: 500px;
+}
+
+
+.flagsCiudades{
+   
+    height: 230px;
+    width: 900px;
+}
+#Body{
+    background-image: url("./assets/OIG3.TUtVKv.jfif");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    
+}
