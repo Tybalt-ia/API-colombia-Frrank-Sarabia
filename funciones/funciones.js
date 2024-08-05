@@ -110,6 +110,15 @@ export function filtroTexto(arregloDepartamentos) {
   return (DepartamentosFiltrados)
 }
 
+export function filtroTextoDetalles(arregloDepartamentos) {
+  let texto = document.getElementById("searchDetalles").value.toLowerCase()  
+  let DepartamentosFiltrados = arregloDepartamentos
+  if (texto != null || texto != undefined) {
+    DepartamentosFiltrados = arregloDepartamentos.filter(departamento => departamento.name.toLowerCase().includes(texto)
+   )}
+  return (DepartamentosFiltrados)
+}
+
 export function filtroRegion(arregloDepartamentos) {  
   let region = document.getElementById("selector").value
   let DepartamentosFiltrados = arregloDepartamentos

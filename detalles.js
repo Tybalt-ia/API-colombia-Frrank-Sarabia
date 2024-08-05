@@ -1,4 +1,4 @@
-import { consultarUrl, pintarElementoTexto, pintartarjetas2,CheckCombinados } from "./funciones/funciones.js";
+import { consultarUrl, pintarElementoTexto,filtroTextoDetalles,  pintartarjetas2,CheckCombinados, filtroTexto } from "./funciones/funciones.js";
 
 let id = new URLSearchParams(window.location.search).get("id")
 
@@ -24,6 +24,17 @@ let urlAreas = `https://api-colombia.com/api/v1/Department/${id}/naturalareas `
 let areas = await consultarUrl(urlAreas)
 pintartarjetas2(areas[0].naturalAreas, "ciudades", "success")
 
+document.getElementById ("searchDetalles").addEventListener('keyup',e=>{
+    let arregloCiudadesPorTexto = filtroTextoDetalles (ciudades)
+    let arregloAreasPorTexto = filtroTextoDetalles (areas[0].naturalAreas,)
+    
+    console.log(arregloAreasPorTexto);
+    let contenedor = document.getElementById ("ciudades")
+    contenedor.innerHTML = ""
+    pintartarjetas2 (arregloCiudadesPorTexto, "ciudades","primary")
+    pintartarjetas2 (arregloAreasPorTexto, "ciudades", "success")
+})
+
 
 document.getElementById("CheckCiudades").addEventListener('change', e => {
     CheckCombinados(areas[0].naturalAreas,ciudades)
@@ -32,6 +43,12 @@ document.getElementById("CheckCiudades").addEventListener('change', e => {
 document.getElementById("CheckAreasNaturales").addEventListener('change', e => {
     CheckCombinados(areas[0].naturalAreas,ciudades)
 })
+
+
+
+
+
+
 
 
 

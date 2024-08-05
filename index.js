@@ -25,7 +25,7 @@ pintartarjetas(departamentos,"departamentos")
 document.getElementById ("inputTexto").addEventListener('keyup', e =>{
     let  arreglodepartamentosTexto = filtroTexto(departamentos)
     let contenedor = document.getElementById("departamentos")    
-    contenedor.innerHTML =""
+    contenedor.innerHTML = ""
     pintartarjetas(arreglodepartamentosTexto, "departamentos")    
 })
 
